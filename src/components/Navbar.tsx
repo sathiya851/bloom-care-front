@@ -1,20 +1,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/logo.webp";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const links = ["Services", "Doctors", "About", "Contact"];
+  const links = ["Services", "Doctors", "Facilities", "Reviews", "Contact"];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         <a href="#" className="flex items-center gap-2 group">
-          <Heart className="w-7 h-7 text-accent fill-accent/20 group-hover:fill-accent/40 transition-colors" />
-          <span className="font-serif text-xl text-foreground tracking-tight">
-            Heart Sepalicty
-          </span>
+          <img src={logo} alt="Kalyaan Speciaality Hospital" className="h-10 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -30,9 +28,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="tel:+1234567890" className="flex items-center gap-1.5 text-sm text-primary font-medium">
+          <a href="tel:9445281804" className="flex items-center gap-1.5 text-sm text-primary font-medium">
             <Phone className="w-4 h-4" />
-            Emergency
+            9445281804
           </a>
           <Button size="sm">Book Appointment</Button>
         </div>
@@ -58,6 +56,9 @@ const Navbar = () => {
               {link}
             </a>
           ))}
+          <a href="tel:9445281804" className="block py-2.5 text-sm font-medium text-primary">
+            📞 9445281804
+          </a>
           <Button size="sm" className="w-full mt-2">Book Appointment</Button>
         </div>
       )}
