@@ -18,10 +18,10 @@ const ContactSection = () => {
   }, []);
 
   const info = [
-    { icon: MapPin, label: "425 Cardiac Boulevard, Suite 100" },
-    { icon: Phone, label: "+1 (555) 234-7890" },
-    { icon: Mail, label: "care@heartsepalicty.org" },
-    { icon: Clock, label: "Emergency: 24/7 • Clinics: 7am–8pm" },
+    { icon: MapPin, label: "No 5, Kundusalai Road, Alpet, Cuddalore – 607001, Tamil Nadu" },
+    { icon: Phone, label: "9445281804  |  04142-220055" },
+    { icon: Mail, label: "info@kalyaanhospital.com" },
+    { icon: Clock, label: "Emergency: 24/7 • OPD: Mon–Sat" },
   ];
 
   return (
@@ -51,6 +51,20 @@ const ContactSection = () => {
                 </div>
               ))}
             </div>
+
+            {/* Google Maps embed */}
+            <div className="mt-8 rounded-xl overflow-hidden shadow-sm aspect-video">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3906.123!2d79.7547!3d11.7469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDQ0JzQ5LjAiTiA3OcKwNDUnMTcuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Kalyaan Speciaality Hospital Location"
+              />
+            </div>
           </div>
 
           <form
@@ -69,7 +83,7 @@ const ContactSection = () => {
                 <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 block">
                   Phone
                 </label>
-                <Input placeholder="+1 (___) ___-____" type="tel" />
+                <Input placeholder="+91 _____ _____" type="tel" />
               </div>
             </div>
             <div>

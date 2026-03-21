@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-hospital.jpg";
-import { ArrowRight, Clock, Shield } from "lucide-react";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Heart Sepalicty Hospital building"
+          alt="Kalyaan Speciaality Hospital"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -20,36 +20,38 @@ const HeroSection = () => {
           <div
             className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6 animate-fade-up"
           >
-            <Shield className="w-3.5 h-3.5 text-primary-foreground/80" />
+            <MapPin className="w-3.5 h-3.5 text-primary-foreground/80" />
             <span className="text-xs font-medium text-primary-foreground/80 tracking-wide uppercase">
-              Trusted Cardiac Care Since 1987
+              Cuddalore's Trusted Heart & Multi-Speciality Centre
             </span>
           </div>
 
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl text-primary-foreground leading-[1.08] tracking-tight text-balance animate-fade-up"
-            style={{ animationDelay: "100ms" }}
+            style={{ animationDelay: "100ms", lineHeight: 1.08 }}
           >
-            Where Every Heartbeat Matters
+            Kalyaan Speciaality Hospital
           </h1>
 
           <p
             className="mt-5 text-lg text-primary-foreground/70 max-w-lg leading-relaxed animate-fade-up"
             style={{ animationDelay: "200ms" }}
           >
-            Advanced cardiovascular diagnostics and treatment, delivered with warmth and precision by our world-class team.
+            Heart & Multi-Speciality Care — combining advanced technology with compassionate treatment for every patient.
           </p>
 
           <div
             className="flex flex-wrap gap-3 mt-8 animate-fade-up"
             style={{ animationDelay: "300ms" }}
           >
-            <Button variant="hero" size="lg" className="gap-2">
-              Book Appointment
-              <ArrowRight className="w-4 h-4" />
+            <Button variant="hero" size="lg" className="gap-2" asChild>
+              <a href="#contact">
+                Book Appointment
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </Button>
-            <Button variant="hero-outline" size="lg">
-              Our Services
+            <Button variant="hero-outline" size="lg" asChild>
+              <a href="#services">Our Services</a>
             </Button>
           </div>
 
@@ -63,11 +65,11 @@ const HeroSection = () => {
             </div>
             <div className="h-4 w-px bg-primary-foreground/20" />
             <span className="text-sm text-primary-foreground/60">
-              128+ Cardiac Specialists
+              📞 9445281804
             </span>
             <div className="h-4 w-px bg-primary-foreground/20 hidden sm:block" />
             <span className="text-sm text-primary-foreground/60 hidden sm:block">
-              47,000+ Surgeries
+              📍 Cuddalore, TN
             </span>
           </div>
         </div>

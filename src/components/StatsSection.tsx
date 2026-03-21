@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: "37", suffix: "+", label: "Years of Excellence" },
-  { value: "128", suffix: "", label: "Cardiac Specialists" },
-  { value: "47,200", suffix: "+", label: "Successful Surgeries" },
-  { value: "98.3", suffix: "%", label: "Patient Satisfaction" },
+  { value: "24/7", suffix: "", label: "Emergency Care" },
+  { value: "7", suffix: "+", label: "Specialist Doctors" },
+  { value: "10,000", suffix: "+", label: "Patients Treated" },
+  { value: "98", suffix: "%", label: "Patient Satisfaction" },
 ];
 
 const StatsSection = () => {
