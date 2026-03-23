@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-hospital.jpg";
-import { ArrowRight, Clock, MapPin } from "lucide-react";
+import { ArrowRight, CalendarCheck, Stethoscope, HeartPulse, Building2 } from "lucide-react";
+
+const quickActions = [
+  { icon: CalendarCheck, label: "Book Appointment", href: "#contact" },
+  { icon: Stethoscope, label: "Find a Doctor", href: "#doctors" },
+  { icon: HeartPulse, label: "Our Services", href: "#services" },
+  { icon: Building2, label: "Our Facilities", href: "#facilities" },
+];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[88vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -12,65 +19,67 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-hero-overlay/70" />
+        <div className="absolute inset-0 bg-hero-overlay/75" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-16">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-8 pb-28">
         <div className="max-w-2xl">
-          <div
-            className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6 animate-fade-up"
+          <p
+            className="text-sm font-semibold uppercase tracking-[0.2em] text-[hsl(35,90%,52%)] mb-5 animate-fade-up"
           >
-            <MapPin className="w-3.5 h-3.5 text-primary-foreground/80" />
-            <span className="text-xs font-medium text-primary-foreground/80 tracking-wide uppercase">
-              Cuddalore's Trusted Heart & Multi-Speciality Centre
-            </span>
-          </div>
+            Heart & Multi-Speciality Care
+          </p>
 
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl text-primary-foreground leading-[1.08] tracking-tight text-balance animate-fade-up"
-            style={{ animationDelay: "100ms", lineHeight: 1.08 }}
+            className="text-4xl sm:text-5xl lg:text-[3.5rem] text-primary-foreground text-balance animate-fade-up"
+            style={{ animationDelay: "80ms", lineHeight: 1.1 }}
           >
             Kalyaan Speciaality Hospital
           </h1>
 
           <p
-            className="mt-5 text-lg text-primary-foreground/70 max-w-lg leading-relaxed animate-fade-up"
-            style={{ animationDelay: "200ms" }}
+            className="mt-5 text-lg text-primary-foreground/65 max-w-lg leading-relaxed animate-fade-up"
+            style={{ animationDelay: "160ms" }}
           >
-            Heart & Multi-Speciality Care — combining advanced technology with compassionate treatment for every patient.
+            Cuddalore's trusted centre for advanced cardiac care and multi-speciality treatment — combining technology with compassion.
           </p>
 
           <div
             className="flex flex-wrap gap-3 mt-8 animate-fade-up"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "240ms" }}
           >
-            <Button variant="hero" size="lg" className="gap-2" asChild>
+            <Button className="bg-[hsl(35,90%,52%)] hover:bg-[hsl(35,90%,45%)] text-white font-semibold rounded-full px-7 h-12 gap-2 shadow-lg hover:shadow-xl active:scale-[0.97] transition-all" asChild>
               <a href="#contact">
                 Book Appointment
                 <ArrowRight className="w-4 h-4" />
               </a>
             </Button>
-            <Button variant="hero-outline" size="lg" asChild>
-              <a href="#services">Our Services</a>
+            <Button variant="hero-outline" size="lg" className="rounded-full px-7 h-12" asChild>
+              <a href="tel:9445281804">📞 Call Now</a>
             </Button>
           </div>
+        </div>
+      </div>
 
-          <div
-            className="flex items-center gap-6 mt-12 animate-fade-up"
-            style={{ animationDelay: "450ms" }}
-          >
-            <div className="flex items-center gap-2 text-primary-foreground/60">
-              <Clock className="w-4 h-4" />
-              <span className="text-sm">24/7 Emergency</span>
-            </div>
-            <div className="h-4 w-px bg-primary-foreground/20" />
-            <span className="text-sm text-primary-foreground/60">
-              📞 9445281804
-            </span>
-            <div className="h-4 w-px bg-primary-foreground/20 hidden sm:block" />
-            <span className="text-sm text-primary-foreground/60 hidden sm:block">
-              📍 Cuddalore, TN
-            </span>
+      {/* Quick action bar — Apollo style */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 bg-card rounded-t-2xl shadow-[0_-8px_32px_hsl(210_30%_12%/0.12)] overflow-hidden">
+            {quickActions.map((action, i) => (
+              <a
+                key={action.label}
+                href={action.href}
+                className="group flex items-center gap-3 px-5 py-5 lg:py-6 hover:bg-primary/5 transition-colors border-r border-b lg:border-b-0 border-border/40 last:border-r-0 even:border-r-0 lg:even:border-r active:scale-[0.98]"
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <action.icon className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {action.label}
+                </span>
+                <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
