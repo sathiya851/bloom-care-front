@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/bloom-care-font/',
+  base: '/bloom-care-front/',
 
   server: {
     host: "::",
