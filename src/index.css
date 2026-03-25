@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 @layer base {
   :root {
@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 30% 12%;
 
-    --primary: 197 71% 23%;
+    --primary: 174 62% 47%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 200 20% 95%;
@@ -24,7 +24,7 @@
     --muted: 210 15% 95%;
     --muted-foreground: 210 10% 45%;
 
-    --accent: 197 71% 23%;
+    --accent: 174 62% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -32,7 +32,7 @@
 
     --border: 210 15% 90%;
     --input: 210 15% 90%;
-    --ring: 197 71% 23%;
+    --ring: 174 62% 47%;
 
     --radius: 0.5rem;
 
@@ -47,8 +47,9 @@
 
     --hero-overlay: 210 40% 8%;
     --section-alt: 200 20% 97%;
-    --cta: 35 90% 52%;
+    --cta: 174 62% 47%;
     --cta-foreground: 0 0% 100%;
+    --dark: 210 29% 15%;
   }
 }
 
@@ -59,11 +60,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
     overflow-wrap: break-word;
   }
 }
@@ -75,26 +76,13 @@
 }
 
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-    filter: blur(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; filter: blur(4px); }
-  to { opacity: 1; filter: blur(0); }
-}
-
-@keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .animate-fade-up {
@@ -103,8 +91,4 @@
 
 .animate-fade-in {
   animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
